@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="221126搞懂了二项分布、泊松分布、正态分布的关系。洗衣服，全部洗掉！洗掉了大盆，全是灰。和面做馒头！大采购！xyg赢啦！flag是每天学习8小时。 嗯......我们队未来很迷茫啊，成绩看不到希望，其实我本人不太在意成绩，只希望不要塌就行，毕竟现在世冠尾声，hero和狼都出事了。就希望我们家的弟弟别出人品问题就好。221230 洗衣服可以洗两锅，一起烘干。  #### 221127 今天只看文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日记2211-12">
+<meta property="og:url" content="http://example.com/2022/12/30/%E4%B8%AA%E4%BA%BA-%E6%97%A5%E8%AE%B0%E4%B8%8E%E8%AE%B0%E4%BA%8B-%E6%97%A5%E8%AE%B02211-12/index.html">
+<meta property="og:site_name" content="rt9ue2p1jf3">
+<meta property="og:description" content="221126搞懂了二项分布、泊松分布、正态分布的关系。洗衣服，全部洗掉！洗掉了大盆，全是灰。和面做馒头！大采购！xyg赢啦！flag是每天学习8小时。 嗯......我们队未来很迷茫啊，成绩看不到希望，其实我本人不太在意成绩，只希望不要塌就行，毕竟现在世冠尾声，hero和狼都出事了。就希望我们家的弟弟别出人品问题就好。221230 洗衣服可以洗两锅，一起烘干。  #### 221127 今天只看文">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-30T05:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-31T02:45:03.863Z">
+<meta property="article:tag" content="日记">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/12/30/%E4%B8%AA%E4%BA%BA-%E6%97%A5%E8%AE%B0%E4%B8%8E%E8%AE%B0%E4%BA%8B-%E6%97%A5%E8%AE%B02211-12/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>日记2211-12 | rt9ue2p1jf3</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">rt9ue2p1jf3</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/30/%E4%B8%AA%E4%BA%BA-%E6%97%A5%E8%AE%B0%E4%B8%8E%E8%AE%B0%E4%BA%8B-%E6%97%A5%E8%AE%B02211-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rt9ue2p1jf3">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          日记2211-12
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-30 00:00:00 / 修改时间：21:45:03" itemprop="dateCreated datePublished" datetime="2022-12-30T00:00:00-05:00">2022-12-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AA%E4%BA%BA/" itemprop="url" rel="index"><span itemprop="name">个人</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AA%E4%BA%BA/%E6%97%A5%E8%AE%B0%E4%B8%8E%E8%AE%B0%E4%BA%8B/" itemprop="url" rel="index"><span itemprop="name">日记与记事</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="221126"><a href="#221126" class="headerlink" title="221126"></a>221126</h4><p>搞懂了二项分布、泊松分布、正态分布的关系。<br>洗衣服，全部洗掉！洗掉了大盆，全是灰。<br>和面做馒头！<br>大采购！<br>xyg赢啦！flag是每天学习8小时。</p>
+<font color='red'>嗯......我们队未来很迷茫啊，成绩看不到希望，其实我本人不太在意成绩，只希望不要塌就行，毕竟现在世冠尾声，hero和狼都出事了。就希望我们家的弟弟别出人品问题就好。221230</font>
+洗衣服可以洗两锅，一起烘干。
+
+#### 221127
+今天只看文献了。看到了很多数据的来源，搞明白了什么是ff现象，初步了解黑子活动，了解了FK Com class的特征和成因猜想。可以说report的大部分都有得说了。就是需要再确认新paper。
+<font color='red'>后续还是挺顺利的，准备了很久，虽然pre表现一般但综合成绩很满意，而且我又是业余哈哈哈，关键还是在（可能是）学生时代最后一场pre完整地把想讲的东西，脱稿+现场讲出来，没有掉链子，算是圆满了。221230</font>
+绘卷顺利肝完！凌晨一点（我的时间）开卷3，52+72+138名，50碎片到手！（季）
+总是想吃东西，有什么可以自己做的零食啊！
+
+#### 221128
+去上课了，虽然没听懂。<font color='red'>好像是说498吧。221230</font>
+预习402。做完quiz。
+402.......
+刚开学学black body，下意识以为是黑洞，一直都没发现有什么问题，还心想黑洞怎么还有表面温度呢，表面在哪呢，直到今天学到超大质量恒星的演化，才发现黑洞叫black hole......属于是天文没学好，英语没学好，热力学也没学好。
+大概也是因为我理解3分靠信息摄入，7分靠脑补，能脑补一个字我就会少看一个字哈哈哈哈哈，太偷懒了！
+早上两个面饼吃不完，剩下的可以晚上做三明治。
+
+#### 221201
+整理了hexo博客的文章，重新建立了分类体系。
+
+#### 221203
+昨天想起来自己的公众号，以后可以发点文章的。
+
+#### 221214
+早上睡觉梦见当了教练，笑死，还是利用我的学历和聪明头脑，然后八点钟醒来就有点兴奋，开始认真思考入行的可能性。笑死，感觉数据分析师也不是不能做，下半年趁机看看国外的paper和相关书籍。搞不好利用python，利用dynamics，利用game theory呢。反正感觉人生已经就这样了，反正感觉找不到什么赚钱的工作，不如尝试点别的行业。笑死。
+
+
+填了CAPS的预约单，症状描述：
+I found difficult to focus in class from I was in high school. I could easily forget what I am going to do or speak several seconds after I planned, but my memory is actually good for detailed scenes that happened many years ago. I am not able to do multiple things at the same time. I feel hard to get things done until deadline is coming. I could easily get late and I feel lacking the sense of time. Also I could not understand what others are saying sometimes, even if I am very sensitive to sounds and even if in my native language. My brain is always full of sentences, sounds, or videos every second awake, thinking about something or imaging a fantasy story, or just playing the music I have listened to. 
+I also have some social difficulties, as I was trying to learn how to communicate with others by observing how they behavior but always failed under new conversations and situations. And I feel my brain is frozen when I speak to others, not aware of what I am saying or even my existence on the world. These are the reasons why I am thinking I may have attention or social or probably some kinds of language processing difficulties. I have found some of my concern consistent with the symptoms of ADHD, or maybe some genetic issues especially I feel my family have similar personalities like sensitive, think a lot but untalkative, stubborn, or depressed. But I would not take them true for now, since my information is from the internet instead of professional diagnosis. So I want to make sure if I do hold disorders or just personalities, so that I could know if I should get therapy or find other ways to solve my problems. Or simply get some suggestions and help and I will appreciate for that. 
+<font color='red'>initial咨询在22号，记录在23号。221230</font>
+
+<h4 id="221219"><a href="#221219" class="headerlink" title="221219"></a>221219</h4><p>突然想起来高中修厕所门的事了，行动力真强啊，还总有奇思妙想，再联想那时候做通技课的作业，可能也是我和我专业最初的缘分。</p>
+<h4 id="221223"><a href="#221223" class="headerlink" title="221223"></a>221223</h4><p>昨天一口气看了八集四重奏，今天看了最后两集。没想到什么时候我也对日剧没感觉了，所描述的细微的东西、趣味的东西都有些刻意，小巧精致，又难以复制。<br>大概是我也厌倦了这样的表达。膨胀的欲望无法满足啊，总是容易腻，然后不知到底想要什么。</p>
+<p>顺便记一下昨天，完成了initial c，感觉有些累。大概还是语言的关系，毕竟我能把中文说得还算通顺，是依赖二十几年不断读书，以及近几年每天刷社交媒体的语料摄入，而英文上我几乎没有输入，所以还是说不好。</p>
+<p>所以我也没办法确定是否我语言能力有问题。如果想把外语说好，或许也需要十几二十年的高强度输入。那么，起码这是一个努力方向。</p>
+<p>继续说昨天。计划假期结束后会有人联系我，今天看完剧躺在床上，感觉自己就像在等待审判，不安地度过整个假期。这种感觉现在已经从我心中消失了，不过我记得当时心中所想，所用的词汇，所以此时能够记录下来，尽量还原。</p>
+<h4 id="221224"><a href="#221224" class="headerlink" title="221224"></a>221224</h4><font color='red'>见vlog。堆雪人感觉得用了一个多小时，反正四点出去回来得有个五点多六点了吧。特别冷，冻死了，后来还好没感冒。终于坐了秋千，快乐。本来这一天不是特别顺利，不过还是完成了愿望——雪马桶！顺便，这时候我爸妈阳了，可是他们后来才告诉我。221230</font>
+
+<h4 id="221225"><a href="#221225" class="headerlink" title="221225"></a>221225</h4><p>今天吃了火锅，半袋火锅底料就很辣！下次只要四分之一就好了。蟹棒容易碎，最后再放。<br>蒸好的馒头吃时只需要微波炉一分钟，稍微有点硬但问题不大。<br><strong>整理了属于自己的御魂方案，大工程完毕！以后只需要弃置，再捞回来就好了！太爽了！可以用很久！</strong><br><strong>安排了同心队的御魂配置</strong>，只需要一个手机就可以刷400体，好方便！大号手动，和三个小号分别组400体，刷起来巨爽！等下次有空好好整理一下觉醒阵容！<br>看了电影《贫民窟的百万富翁》，没有特别的感觉，不过还是好看的。在我看来算是最好的结局了，本来就不可能三人都逃出来，总有人是要牺牲生命的。我也不觉得主角有多么十恶不赦地天真，只是没得选而已。<br><strong>把剩下的一大块肉切了</strong>，今天吃了一份，还有5份，之后就不用占案板和刀了！但是要洗一洗哦。<br><strong>洗了澡！</strong></p>
+<h4 id="221226"><a href="#221226" class="headerlink" title="221226"></a>221226</h4><p>整理了firefox收藏夹。<br>回顾了一篇听力，重新做了笔记，并且查了资料。感觉现在学英语的feeling更加清晰了，在这个环境中沉浸之后，再学习知识就不会那么干巴巴，像隔着毛玻璃一样了。<br>准备开始看线性代数的书。<br>活动箱子开了一只黑蛋！合成了阿香！<br>走马观花看完了一本书，满足！</p>
+<h4 id="221228"><a href="#221228" class="headerlink" title="221228"></a>221228</h4><p>开始学习JS；</p>
+<p>整理了github上hexo博客的图片；</p>
+<p>下午的大部分时间都在看书，看那本游记。作者从英国坐船来到西班牙，并从西北到中心，再到西南，向东到东南。我挺喜欢这本书的，尤其是那些描写自然风光的地方，在田野、山脉、海边穿行，度过炎热干渴的白天和潮湿寒冷的夜晚。在城市遇到各种各样的人，反倒对我来说没什么感觉。不过我喜欢作者各种新奇又贴切的比喻和描述方式，读到一半时我自己也写了一篇，想象晚上在湖边不想回家的场景，不由自主地就在脑子里搜索奇怪的形容，来最大程度上还原我想表达的微妙感觉。再看书时，觉得我写的东西和作者写的风格略有些相似，大概也是因此喜欢这本书吧。</p>
+<p>喜欢读游记，可能也是因为我常常在熟悉之前就厌倦，想要离开，去新的地方重新开始。就像这本游记中不断改换的城市一样，或许不是迷恋新鲜感，而是在什么地方都无法落脚的心情在赶着自己不停地走吧。</p>
+<p>去年还在家的时候，我觉得旅行是能够在想象中办到的事，是一种可以非常抽象的，人生的旅行。那么，要不我重拾那样的想法，试试每周写一篇游记，讲述这一周我在世上的旅行。</p>
+<p>也想背着背包，装好吃的、穿的、睡的，一直往远处走去，走出城市，走过乡间和野外，在歇脚的途中掏出包在外套里层的本子写日记。当然，我知道不行的。那也许走走城市呢？</p>
+<h4 id="221229"><a href="#221229" class="headerlink" title="221229"></a>221229</h4><p>整理了2022和2021的年度歌单。给所有歌单排序，不错！<br>电脑端好像暂时没有版权问题耶，以后可以用电脑听。<br>读完了《当我在一个仲夏清晨出走》，没想到被结尾震撼了……可怕的战争，作者被祖国解救回家，却再次义无反顾地回到战争前线，在冬天顶着暴风雪，差点就噶了……这勇气，真的令人读完难以忘怀。那些对未来一无所知的平民，像时代中迷茫的我们，而我们又是否能有勇气，在人类丑陋而愚蠢的抗争中坚决地走下去呢？</p>
+<h4 id="221230"><a href="#221230" class="headerlink" title="221230"></a>221230</h4><p>今天起来胳膊有点疼，主要是前胸靠近肩膀的位置，二头也稍微有一点。看来昨天没白练呢。<br>和老友聊天。本来想（这里要说什么忘记了，因为饿了就去做饭，结果做完直接开始看电影了。。。<br>跟着视频练腿，只练了10分钟，感觉腿要废了，软得厉害哈哈哈，看来只能分成3天练胳膊腿腹，不要为难自己，感觉到不想干了就停下来。<br>不吃辣了！最近绝对不能吃辣了！不然又要重蹈覆辙！<br>看了动画杨戬，呃，感觉剧情和人物塑造都没有特别大新意，但是视听语言，非常棒，欠了张电影票的水平。虽然杂糅蒸汽朋克，还有爵士，电音琵琶，但哈哈哈哈真的耳目一新，非常棒，节奏也可以，2小时感觉很丰富，不错内。其实我看电影没那么关注剧情，除非其他方面都平平无奇，那就只能看剧情了。如果其他方面好，我也是可以不那么在乎剧情的啦。顺便，场景美术可能真的很需要建模啊。<br>然后看着看着突然有了个绝妙的构思，关于高维世界和我心中的两个故事，还挺有意思的，感觉一个庞大的宇宙可以构建起来了，虽然具体细节可能还有许多违背物理规律的地方。</p>
+<font color='red'>221230</font>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag"># 日记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/12/30/%E4%B8%AA%E4%BA%BA-%E6%BC%AB%E6%B8%B8-%E6%88%91%E7%94%9F%E5%91%BD%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%881%EF%BC%89%E8%AE%BE%E5%AE%9A/" rel="prev" title="我生命中最重要的故事（1）设定">
+      <i class="fa fa-chevron-left"></i> 我生命中最重要的故事（1）设定
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/12/30/%E4%B8%AA%E4%BA%BA-%E6%97%A5%E8%AE%B0%E4%B8%8E%E8%AE%B0%E4%BA%8B-%E6%83%B3%E6%B3%952211-12/" rel="next" title="想法2211-12">
+      想法2211-12 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#221126"><span class="nav-number">1.</span> <span class="nav-text">221126</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#221219"><span class="nav-number">2.</span> <span class="nav-text">221219</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#221223"><span class="nav-number">3.</span> <span class="nav-text">221223</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#221224"><span class="nav-number">4.</span> <span class="nav-text">221224</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#221225"><span class="nav-number">5.</span> <span class="nav-text">221225</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#221226"><span class="nav-number">6.</span> <span class="nav-text">221226</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#221228"><span class="nav-number">7.</span> <span class="nav-text">221228</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#221229"><span class="nav-number">8.</span> <span class="nav-text">221229</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#221230"><span class="nav-number">9.</span> <span class="nav-text">221230</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+    </div>
+</body>
+</html>
