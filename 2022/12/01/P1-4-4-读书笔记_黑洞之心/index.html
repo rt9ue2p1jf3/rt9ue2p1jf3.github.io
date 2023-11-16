@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="笔记序言 本书简介    这本小书旨在向有兴趣的读者展示黑洞的奇幻魅力，但并不要求大家必须掌握物理学或天文学的基础知识。我摒弃巨细无遗的讲解，本意是想更通俗地给大家传递我个人认为最重要的黑洞特性，并且尽可能把这个过程建立在科学事实之上。 抛开系统烦琐的数学证明，本书采用对话形式，意在让那些关于黑洞的最重要的谜题尽量明白易懂，同时不失严格准确。我将在本书中呈现我们已经透彻掌握了的物理学成果，也将向大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记：黑洞之心">
+<meta property="og:url" content="http://example.com/2022/12/01/P1-4-4-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_%E9%BB%91%E6%B4%9E%E4%B9%8B%E5%BF%83/index.html">
+<meta property="og:site_name" content="rt9ue2p1jf3">
+<meta property="og:description" content="笔记序言 本书简介    这本小书旨在向有兴趣的读者展示黑洞的奇幻魅力，但并不要求大家必须掌握物理学或天文学的基础知识。我摒弃巨细无遗的讲解，本意是想更通俗地给大家传递我个人认为最重要的黑洞特性，并且尽可能把这个过程建立在科学事实之上。 抛开系统烦琐的数学证明，本书采用对话形式，意在让那些关于黑洞的最重要的谜题尽量明白易懂，同时不失严格准确。我将在本书中呈现我们已经透彻掌握了的物理学成果，也将向大">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/rt9ue2p1jf3/images/blog-images/E/E3/1/faeb36bd6cfefd2becb93478b562c23.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/rt9ue2p1jf3/images/blog-images/E/E3/1/1c1d107651b6c27417a854d3b65f724.jpg">
+<meta property="article:published_time" content="2022-11-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-16T10:54:10.591Z">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/rt9ue2p1jf3/images/blog-images/E/E3/1/faeb36bd6cfefd2becb93478b562c23.jpg">
+
+<link rel="canonical" href="http://example.com/2022/12/01/P1-4-4-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_%E9%BB%91%E6%B4%9E%E4%B9%8B%E5%BF%83/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>读书笔记：黑洞之心 | rt9ue2p1jf3</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">rt9ue2p1jf3</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/01/P1-4-4-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_%E9%BB%91%E6%B4%9E%E4%B9%8B%E5%BF%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rt9ue2p1jf3">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          读书笔记：黑洞之心
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-01 00:00:00" itemprop="dateCreated datePublished" datetime="2022-12-01T00:00:00+08:00">2022-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-11-16 18:54:10" itemprop="dateModified" datetime="2023-11-16T18:54:10+08:00">2023-11-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/P-%E5%A4%A9%E6%96%87%E5%AD%A6%E3%80%81%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">P 天文学、地球科学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/P-%E5%A4%A9%E6%96%87%E5%AD%A6%E3%80%81%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/P1-%E5%A4%A9%E6%96%87%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">P1 天文学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/P-%E5%A4%A9%E6%96%87%E5%AD%A6%E3%80%81%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/P1-%E5%A4%A9%E6%96%87%E5%AD%A6/P14-%E5%A4%A9%E4%BD%93%E7%89%A9%E7%90%86%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">P14 天体物理学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/P-%E5%A4%A9%E6%96%87%E5%AD%A6%E3%80%81%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/P1-%E5%A4%A9%E6%96%87%E5%AD%A6/P14-%E5%A4%A9%E4%BD%93%E7%89%A9%E7%90%86%E5%AD%A6/P144-%E6%81%92%E6%98%9F%E7%89%A9%E7%90%86%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">P144 恒星物理学</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a><font color=767ac1>序言</font></h2><font color=767ac1>
+本书简介
+</font>
+
+<blockquote>
+<p>这本小书旨在向有兴趣的读者<strong>展示黑洞的奇幻魅力，但并不要求大家必须掌握物理学或天文学的基础知识</strong>。我摒弃巨细无遗的讲解，本意是想更通俗地给大家<strong>传递我个人认为最重要的黑洞特性</strong>，并且尽可能把这个过程建立在科学事实之上。</p>
+<p>抛开系统烦琐的数学证明，本书<strong>采用对话形式，意在让那些关于黑洞的最重要的谜题尽量明白易懂，同时不失严格准确</strong>。我将在本书中呈现我们已经透彻掌握了的物理学成果，也将向大家介绍物理学的前沿问题。因此，这本书不仅涉及（以尽量简洁的方式呈现）广义相对论，也试图导引大家认识仍在发展中的物理科学。</p>
+</blockquote>
+<h4 id="关于对话形式"><a href="#关于对话形式" class="headerlink" title="关于对话形式"></a><font color=767ac1>关于对话形式</font></h4><ul>
+<li><font color=767ac1>
+对话形式初看挺头大，因为开头一定是“废话”来铺垫引入。对话和作者以口语形式对读者娓娓道来讲故事，哪个好？
+</font></li>
+<li><font color=767ac1>
+人们对对话形式的东西（科普或其他）如何看待？有无相关中外研究？
+</font>
+</li>
+<li><font color=767ac1>
+看到后面的感受，感觉对话的两个人性格和语言没那么分明，而且有些刻板，仍然像一个人在努力扮演两个角色，或者为了达成呼应特意设计罢了。不过对话让一切变得不那么武断，出现了质疑和问询的余地，减轻了单人叙述时的专一肯定性。毕竟人们听到别人的叙述时，第一时间倾向于相信，尤其是自己不懂，但看起来有一定合理性的东西。
+</font>
+
+
+
+
+</li>
+</ul>
+<h2 id="一、黑洞到底是什么"><a href="#一、黑洞到底是什么" class="headerlink" title="一、黑洞到底是什么"></a><font color=767ac1>一、黑洞到底是什么</font></h2><h4 id="我们真的看到黑洞了吗？"><a href="#我们真的看到黑洞了吗？" class="headerlink" title="我们真的看到黑洞了吗？"></a>我们真的看到黑洞了吗？</h4><blockquote>
+<p>你看到夸克了吗？你看到电场了吗？重力场呢？我这儿可有好多这样的物理学例子等着你呢。我还没问你能不能看到爱情或者瓦格纳恢宏美妙的和弦呢！某种程度上你有你的道理：我们“看”不到黑洞，<strong>但有许许多多的物理实体，科学家对它们的认知不是通过“看”来获取的</strong>。日常生活中，<strong>视觉无疑是我们最主要的获取信息的途径，它能让我们勾勒出感知到的外部环境，但它远非唯一的途径，况且利用视觉获取的信息经常会有遗漏</strong>，不够明确。黑洞就是我们通过其他方式探测到的，我们同样不怀疑它的真实性。</p>
+</blockquote>
+<font color=767ac1>
+视觉只有可见光范围，对视觉的处理依赖大脑发育，更依赖后天思想的养成。
+人类穷尽智慧为的就是用不同方式感知和描述世界，与生存繁行的欲望共存又交织。
+描述世界的人，有各行各业，有老有少，有专业有业余，有精英有平民（别嘲笑民科）。
+</font>
+
+<h4 id="黑洞的表面"><a href="#黑洞的表面" class="headerlink" title="黑洞的表面"></a>黑洞的表面</h4><blockquote>
+<p>就一个黑洞而言，<strong>它的表面其实只能单纯用数学来形容，没有物质性可言。你在进入黑洞的过程中丝毫不会感受到它的存在。我们可以简单地把这个表面定义为一个边界</strong>，当你穿过这个边界进入黑洞内部之后，你将再也无法回到来时经过的点。在我们穿过这个表面的过程中不会发生任何撞击或碰撞。这就好比你是瀑布激流前的一条鱼，按照自然规律，水流速度会随着接近瀑布而逐渐增加。现在即使你以最快的速度逆流而上，也无法逃避被水流冲向瀑布的命运。这个“无法返回”效应同样适用于你被径直冲向黑洞中心的情况。但是那条鱼，也就是你，在这个过程中却没有察觉到丝毫异常。以此类推，当你穿过黑洞那球形的分界面时，你也不会有丝毫觉察。</p>
+</blockquote>
+<font color=767ac1>
+像死神真正的身体与它身披的巨大斗篷，你难以分辨，因为它是纯黑的，但当死神真正来临时，你已经无处可逃。
+这么比俞黑洞有点无情了。也许黑洞是个经历风雨后平静下来，摸不透的长者。它搅动周围世界，构建一种秩序，但不许人靠近。
+</font>
+
+<blockquote>
+<p>但是这一切不过是数学计算而已，并不能让我信服。<strong>有谁能保证我们的理论在这样的极限条件下仍旧适用呢</strong>？</p>
+</blockquote>
+<font color=767ac1>
+严谨的科学质疑理论在极限条件下的适用性。
+</font>
+
+<blockquote>
+<p>我能够理解你的不认同。但是在这种情况下，我重复强调的也只是这种方式的可靠性是毋庸置疑的。我们观察到的星体轨迹所揭示的是一个巨大的物体，它拥有巨大质量，约是太阳质量的四百万倍。但它十分昏暗（因为我们“看”不见它却可以清晰地观测到其他星体）又十分微小（星体与它擦身而过而又没有明显直接接触的痕迹）。很明显这就是黑洞的特性啊！我实在想象不出，除了黑洞，还有什么其他东西可以满足以上所有条件。<br>但我们这样不就“先入为主”地默认了黑洞理论的正确性吗？虽然它是最好的解释，但绝对不是唯一的解释。<br><strong>科学确实如此。当你觉得你已经定义了一个已知的物理事物时，那仅仅只能说明在此时此刻这种定义对你来说是最好的解释。你永远也不能排除我们将来可能用一种新方法、新角度去看待这个事物，即便它可能得出和过去完全不同的结论</strong>。</p>
+</blockquote>
+<font color=767ac1>
+喜欢这种透露着科学素养的细节，质疑、保留未来的可能性，充分地想象……科学的浪漫。
+</font>
+
+
+
+<h2 id="二、爱因斯坦的理论"><a href="#二、爱因斯坦的理论" class="headerlink" title="二、爱因斯坦的理论"></a><font color=767ac1>二、爱因斯坦的理论</font></h2><blockquote>
+<p>赫 你昨晚讲的那些黑洞的故事让我无法入睡。<br>埃 这可太好了。<br>赫 你这么说就有点不太友善了啊。<br>埃 我可没有，我一向友善。但是，我觉得当我们思考的时候偶尔遇到想不明白，脑子转不过来的状况，其实是一件很好的事情。我也很高兴我给你对宇宙的认知带来了更多疑惑。宇宙往往比我们认识的要更加丰富、令人敬畏、吸引人、陌生，也更加令人不安。</p>
+</blockquote>
+<font color=767ac1>
+看了一些就能够接受对话了。它不仅让人感觉到在交谈中获得知识，也有一种身临其境的感觉，好像我也曾在睡前思索宇宙。
+</font>
+
+<blockquote>
+<p><strong>科学从来没有给出过既有决定性又十分“完美”的解释，从来都没有。它只是在一定精确度之内给出一个我们所期望的解释，而它也没有正确与否，我们只能说对它“满意”或者“不满意”</strong>。</p>
+<p><strong>实验以及观测是物理学的本质，它将引领我们去理解物理。但是爱因斯坦的天才之处就在于知道如何运用我们所谓的“思想实验”，并且仅靠想象的力量就发明了一个革命性的新理论</strong>。</p>
+<p><strong>两个相似的问题可能有着完全不同的原因</strong>。</p>
+<p><strong>任何文明都认为自己已经了解了真理，可是每一个新时期的新思想都会引起巨大革新，所以我们应该保持谦逊谨慎。贸然地认为之前的想法理论都是错的，真正触碰到真理的只有我们自己，这难道不是十分幼稚又自大吗</strong>？寻求真理固然是对的，没有人愿意歌颂谎言。但是，<strong>让我们也反思一下真理的基础，因为很明显，我们对它的称呼取决于与世界的关系，这种关系是建构的和多样的。例如，对古希腊诗人来说，真理首先是记忆。我们应该意识到，我们可能正在做出不同的选择。最坏的暴力就是否认不同可能性的存在。让我们永远不要害怕反思和思考，不要害怕质疑那些显而易见的事实</strong>。</p>
+</blockquote>
+<font color=767ac1>
+每个人对每种陈述的信念不同，有人相信它是真理，有人不觉得。这种信念来自于成长背景、知识经验，因此多变而不可绝对依赖。世上有真理吗？最真的真理也不过对人类适用而已。我们只是在为自己找寻未来的路，而不是为宇宙立下规矩。
+</font>
+
+<h4 id="爱因斯坦的理论与引力波"><a href="#爱因斯坦的理论与引力波" class="headerlink" title="爱因斯坦的理论与引力波"></a>爱因斯坦的理论与引力波</h4><blockquote>
+<p>质量是可以引起几何扭曲的。</p>
+<p>空间不再是一个独立的实体：它是一个物理量，会被物体的存在改变，这个认识是一个巨大的革命。</p>
+<p>宇宙膨胀的本质是空间的膨胀。</p>
+<p>空间是一个十分“坚固”的物体，想要扭曲它十分困难。我们把空间的波动称为引力波，引力波非常小，它引起的距离变化就好比原子大小之于太阳与地球的距离，细微到很难检测。（激光干涉仪）</p>
+</blockquote>
+<h4 id="宇宙的边界"><a href="#宇宙的边界" class="headerlink" title="宇宙的边界"></a>宇宙的边界</h4><blockquote>
+<p>即使大小有限，宇宙也没有边界。如果它有边界，那么边界的后面将同样是宇宙的一部分，因为根据定义，它属于空间整体。想象一个气球的表面：它只有50平方厘米的表面积，但是一只昆虫在上面爬，永远都不会抵达任何边界。<br>现在我明白曲率在这类问题中的重要性了：如果空间是一张纸而不是一个气球，没有边界之类的说法就不成立了！这也是为什么我们说大爆炸是在所有地方同时发生的：如果我们想象气球从最小的初始状态慢慢充气、膨胀，这正好可以用来模拟原始的 “爆炸”。在这个表面上，传统意义上的两个点的远近就毫无意义了。</p>
+</blockquote>
+<font color=767ac1>
+这里说宇宙没有边界，没看懂，气球的边界不就是球面吗？还是说这里对气球的比喻并不是三维的，而是在说二维的气球表面没有边界？
+</font>
+
+<blockquote>
+<p>狭义相对论表明空间和时间是相互联系的。时间可以膨胀，空间也可以压缩。去未来旅行也是可能的。<br>广义相对论表明时空是弯曲的、动态的。</p>
+</blockquote>
+<h2 id="三、时空何时变疯狂"><a href="#三、时空何时变疯狂" class="headerlink" title="三、时空何时变疯狂"></a><font color=767ac1>三、时空何时变疯狂</font></h2><blockquote>
+<p>音乐无疑也弯曲了空间和时间。一个被弯曲的世界也改变着下一刻的未来。</p>
+</blockquote>
+<font color=767ac1>
+抽象表述，艺术以及其他的一切文明产物都在改变世界。
+</font>
+
+<blockquote>
+<p>想象一下，一艘太空飞船加速到接近光速将会是什么样的场景?<br>啊，我知道。那将会像《星球大战》中的场景一样，络绎不绝的星星将飞速从太空舷窗外划过。<br>实际情况可不是这样哟。事实上，在逐渐加速的过程中，我们反而会有倒退的错觉。你会发现整个天空都集中于你面前的一个点，这个点将会变得极其明亮而其他地方将变得黑暗。我们甚至还可以看见我们身后的物体。随着参考系改变，观察的角度也会改变。所以就算没有引力作用，星体的位置也会自然而然发生偏移。除此之外，物体的颜色也会随之改变，我们前面的物体将会蓝移，后面的物体将会红移。所以这不仅是几何学而且也是光色学上的一个变换影响。</p>
+</blockquote>
+<font color=767ac1>
+科幻片可能会用到哦。
+</font>
+
+<h4 id="多重成像"><a href="#多重成像" class="headerlink" title="多重成像"></a>多重成像</h4><p>每颗星星都会生成多个图像。（近似直线传播，或者经过黑洞扭曲的光线到达人眼。）</p>
+<p>临界值——”光子球“：在外部光子能够逃脱，在内部光子被吞噬。在临界值上作圆周运动。逃脱的光子轨迹也会发生改变。</p>
+<blockquote>
+<p>”光子球“注释：零厚度的球状边界。在此边界所在的位置上，黑洞的引力造成的加速度，刚好使得部分光子以圆形轨道围着黑洞旋转。这个轨道不是稳定的，会随着黑洞的成长而变 动。黑洞外围假想表面是包覆着的光子球层，如果光线与光子球层以切线方式擦身而过，引力便能抓取其中的光子，使之沿着光子球层永远绕着黑洞旋转，就像卫星绕地球旋转一般。</p>
+<p>由于每一颗星星发射出的光都有几束十分接近临界距离，这些光将会在一段时间内被黑洞束缚在我们之前所说的“光子球”当中，同时也将会在黑洞周围产生十分壮观的光晕。</p>
+</blockquote>
+<p>但黑洞如同”减光镜“，亮度变小。</p>
+<h4 id="光速变化"><a href="#光速变化" class="headerlink" title="光速变化"></a>光速变化</h4><blockquote>
+<p>如果光接近黑洞，就会急剧减速！这个过程被称为<strong>夏皮罗时间延迟效应</strong>，它存在于任何质量的物体中，并已通过太阳进行了测量。</p>
+</blockquote>
+<p>往黑洞中扔一个硬盘：</p>
+<blockquote>
+<p>假设现在你所在的 飞船拥有足够的动力，使你能待在黑洞视界附近而不被黑洞吞噬，你将会看到这块硬盘加速坠落入黑洞。而当它进入黑洞的时候，它必然拥有最大的速度，那便是光速。<br>但是现在，假设你离得很远再去观察这个景象，你将会发现，硬盘最开始会慢慢加速，就像我 们之前说的那样。但是，当它接近黑洞周围时，你会发现它在减速，并且在它接近黑洞视界时，你将确确实实地看见它的速度降为……零。通俗地说，这种情况和我们之前所说的完全相反：不再加速到速度最大值，相反，它呈现的是物体将减速到最小值。<br>这两种说法都是正确的，没有哪一个比另一个更接近真理。</p>
+</blockquote>
+<p>硬盘落入黑洞了吗？</p>
+<blockquote>
+<p>从硬盘的角度来看，是的，它会落入黑洞之中。在它的参考系下，当有限时间结束时，它已越过了黑洞视界。但是对于一个遥远地方的观察者来说，情况又会稍微复杂一些。事实上，由于硬盘在接近黑洞的过程中不断减速，所以它不会落入黑洞之中，但它仍然会扩散、展开，也就是说它会变成一张覆盖黑洞的煎饼。 最终它会与黑洞视界几乎融为一体，使黑洞看起来变“胖”了。</p>
+</blockquote>
+<p>如果硬盘配有发光的LED灯呢？</p>
+<blockquote>
+<p>在遥远观察者的描述中，即使它在黑洞之外，它如此接近黑洞视界时引力已足够大，使我们看不到任何光线了。因此我们还是看不见的。<br>你知道对你的头和脚来说，时间流逝的速度是不一样的吗？<br>在不同强度的引力场下的两个时钟，它们的时间流逝速度不同。<br>就像之前提到的LED硬盘一样，当这束光波要逃离黑洞时，将会发生时间膨胀，从而减缓它振动的频率。但是波振动的频率越小，它的能量也就变得越小。从这个意义上说，它几乎没有了能量，变成不可见的了。</p>
+</blockquote>
+<font color=767ac1>
+虽然在不同观察者中硬盘的速度变化趋势不同，也不好说是否一定落入了黑洞内部，但我们也看不到它了。光波逃离黑洞，相当于从脚到头，时间流逝速度改变，时间膨胀，周期变长，频率变小，发生红移。能量变小，因此逃离越远越难以看到。
+</font>
+
+
+
+<h2 id="四、黑洞中的旅行"><a href="#四、黑洞中的旅行" class="headerlink" title="四、黑洞中的旅行"></a><font color=767ac1>四、黑洞中的旅行</font></h2><p>黑洞的质量全集中在奇点，除了这一点外，黑洞视界内外都是真空的。视界并非实质存在，只是方程式中一个特殊的点。撕碎物体的不是视界，而是潮汐效应。</p>
+<h4 id="潮汐效应：跳入黑洞会怎样？"><a href="#潮汐效应：跳入黑洞会怎样？" class="headerlink" title="潮汐效应：跳入黑洞会怎样？"></a>潮汐效应：跳入黑洞会怎样？</h4><blockquote>
+<p>你会感受到这种拉伸的效果。想象一下，你头朝下潜水，那么你的头将会比你的脚受到更大的吸引力。因此你会感受到某种程度的拉伸。</p>
+<p>有的黑洞的密度特别大，会使这种潮汐效应也变得非常大，大到甚至可能会以人类无法想象更无法承受的某种方式将你撕个粉碎！</p>
+<p>对于密度非常低的大质量黑洞，外部潮汐效应仍然可以忽略不计，因此在穿过它们的视界并在其内部继续旅行 长一段时间里可能都不会受到任何伤害。相反，对于高密度的小质量黑洞，潮汐效应可能变得非常强烈，甚至会让你在视界以外丧命，这趟旅行可能会在你到达黑洞之前就提前结束了。</p>
+<p>无论你做什么，即使你打开你的发动机来推动你自己， 试图远离黑洞，结果只会加快这个过程!放弃挣扎，才能最大限度地延长你在黑洞中的生命。</p>
+</blockquote>
+<h4 id="比光速快？"><a href="#比光速快？" class="headerlink" title="比光速快？"></a>比光速快？</h4><blockquote>
+<p>当你在黑洞内向外部射出一束光的时候，光也会向内移动。 即便它“试图”走向视界，但实际上却是朝向中心运动的。<br>说到底，这就好比逆流而上的鱼无法游得比水流快一般。<br>如果我们顺着这个逻辑走，那就表明这个流体流得……比光还要快！</p>
+<p>在黑洞内你的运动速度是否比光速还快？从某种意义上来说，是的！计算上也证实，当我们使用所谓混合坐标时，确实如此。而且我说过，在你穿过黑洞视界的时候，由同一位置观察者测量到的你的速度，就已经等于光速。而且引力在黑洞内部还会继续增强，很明显你的速度也会继续增加。我们还可以用黑洞的半径除以时间（这个时间就是通常意义上由你的手表测量的值，是从视界到达中心的时间）：用距离除以时间正是速度的定义，这就是为什么我们日常中会说千米/小时。而我们也发现计算后的速度是大于光速的。这一切都是正确的。但另一方面，如果你在下坠过程中碰到一个光子，你会看到它仍在以正常速度运动，也就是真空中的光速。</p>
+</blockquote>
+<h4 id="奇点"><a href="#奇点" class="headerlink" title="奇点"></a>奇点</h4><blockquote>
+<p>奇点是时间的终点。<br>时空的弯曲将变得无穷大。<br>无论如何，目前来看爱因斯坦的理论仍然是最适合我们的理论，该理论也是被证实过的。“奇点”并没有空间上的定义，它最重要的意义是定义了时间在此处的终结。</p>
+</blockquote>
+<h4 id="包裹效应？"><a href="#包裹效应？" class="headerlink" title="包裹效应？"></a>包裹效应？</h4><blockquote>
+<p>即它会占据我视野中所有的天空，而我还没有进入。</p>
+<p>这只适用于静止的观察者。<br>即使他在黑洞视界之外，仍会看到几乎蔓延到整个空间的黑洞，只有通过一个非常明亮的小圆盘才能看到天空。</p>
+</blockquote>
+<font color=767ac1>
+大概就像平面上凹下去的深洞一样，在洞中只能坐井观天。
+</font>
+
+<blockquote>
+<p>对于正在下落的你来说， 至少你不会看到我们所描述的这种情况。但我觉得你看到的会更漂亮。正如预期的那样，当你靠近时，黑洞在空间的蔓延会越来越迅速，而天空的其余部分也会变得更暗，最终形成一个越来越薄且越来越亮的发光环形区域垂直出现在你坠落的方向。</p>
+</blockquote>
+<font color=767ac1>
+这里的现象有两部分，黑洞蔓延（时空弯曲），和天空其余部分变暗（多普勒效应）。
+</font>
+
+<blockquote>
+<p>我会说它是广义相对论和狭义相对论之间的竞赛。<br>时空弯曲效应对抗多普勒效应。在朝向黑洞的方向上，时空的弯曲导致了黑暗：光线的轨迹不能通过那里，没有什么东西可以从黑洞中逃出来，所以它才是黑色的。但在背离黑洞的方向上，多普勒效应导致了一个近乎黑色的宇宙：当一个光源快速离我们而去时，从它的位置传播到我们这的光几乎没有能量，它自然而冰冷地变暗。<br>在这两个黑暗区域之间，会有一道薄薄的异常明亮的光环出现在我们的视野中。这是我们在进入奇点前，也就是到达时间的终点前，看到的最后的景象。</p>
+</blockquote>
+<h4 id="黑洞的体积"><a href="#黑洞的体积" class="headerlink" title="黑洞的体积"></a>黑洞的体积</h4><p>无法用简单的球体体积公式计算，没有意义。</p>
+<blockquote>
+<p>事实上，如果我们对黑洞的内部体积进行合理定义，它就会随着时间的推移而变大，虽然我们从外面看到的黑洞大小是固定不变的！如果我们等待足够长的时间，一个外径为几千米的恒星黑洞，实际上可能拥有着比我们整个可见宇宙还要更大的内部体积。</p>
+</blockquote>
+<p>所以被一些人认为是正在生成的”婴儿宇宙“。</p>
+<font color=767ac1>
+搞不好奇点的内部是宇宙，以克莱因瓶的形式循环。也搞不好奇点以内反而是外部，我们才是住在奇点的人。落入奇点的光才是逃出去的，而我们是逃不出去的。
+也许奇点的那一头就是平行世界，只是在无数的塌缩与大爆炸中出现巧合，两边都有生命。而对方比我们先探知了从奇点漏出去的东西，发现了宇宙之间通行或交换信息的秘诀，外星人也因此出现。
+</font>
+
+
+
+
+<h2 id="五、黑洞的旋转"><a href="#五、黑洞的旋转" class="headerlink" title="五、黑洞的旋转"></a><font color=767ac1>五、黑洞的旋转</font></h2><blockquote>
+<p>没有什么比科学想法或哲学想法的单一化更糟糕的了。对物理学来说，多元化研究是至关重要的：一些研究人员非常严谨，他们很愿意耐心地探索经过充分测试的模型的计算结果，其他人则更喜欢冒险，喜欢大胆想象和大胆批判的方式。 这种多元化的期望和方式，才是让物理学保持长盛不衰的秘密。</p>
+<p>不要追随那些思想狭隘的人，这些人成天叫我们站队，他们眼中看到的东西非黑即白，毫无过渡地带。他们也从不因瞧不上自己不理解的东西而感到懊悔。他们的人生其实很可怜。</p>
+</blockquote>
+<h4 id="旋转的黑洞"><a href="#旋转的黑洞" class="headerlink" title="旋转的黑洞"></a>旋转的黑洞</h4><p>史瓦西黑洞：不旋转，最简单的模型，但几乎不存在。大部分黑洞是有自旋的。</p>
+<p>克尔黑洞：旋转的黑洞，有两个视界：事件视界，内部的柯西视界。<br>极限克尔黑洞：以最大速度旋转，两个视界重合，并且不等于史瓦西黑洞的视界。</p>
+<p>黑洞周围的空间也在旋转，参照系产生了连锁反应。想保持静止，我们需要第二个助推器来阻止旋转。</p>
+<h4 id="静界和能层"><a href="#静界和能层" class="headerlink" title="静界和能层"></a>静界和能层</h4><p>静界：克尔黑洞的视界（更普遍地说是所有视界）对应于度规中空间变得无穷大的地方。但还有另一个具有重要物理意义的表面，我们称之为“静界”，它代表着时间趋向于无穷大。</p>
+<p>能层：视界之外，静界之内。没有什么东西可以阻止与黑洞同方向旋转。即使光朝着与旋转方向相反的方向发射，它也会被空间的驱动带走，并最终沿着与黑洞相同的方向转动。而且当它到达视界时，无论其发射方式如何，始终具有相同的角速度。</p>
+<h4 id="坠落的石头，奇点和虫洞"><a href="#坠落的石头，奇点和虫洞" class="headerlink" title="坠落的石头，奇点和虫洞"></a>坠落的石头，奇点和虫洞</h4><blockquote>
+<p>对于旋转的克尔黑洞来说，石头会螺旋旋转并永远转动下去，它会非常接近视界，这是遥远的观察者所看到的。</p>
+<p>在史瓦西黑洞中，奇点是不可避免的。最终被它困住是卷入黑洞的所有东西的宿命。在克尔黑洞中，情况就有点不太清楚了。奇点在此变成了环状：戒指的形状。而这改变了一切：这样一来，从原则上说，奇点成了可避免的。</p>
+</blockquote>
+<p>——虫洞，“爱因斯坦-罗森桥”<br>黑洞的存在基本是肯定的，但虫洞仍然是猜测的结果，十分不确定。</p>
+<p><img src="https://raw.githubusercontent.com/rt9ue2p1jf3/images/blog-images/E/E3/1/faeb36bd6cfefd2becb93478b562c23.jpg" alt="图1"></p>
+<blockquote>
+<p>你必须非常小心这些东西。这些仅仅是广义相对论中可能的理论解决方案，并不能保证它们在我们的世界中真实存在。像大象一样大的蚂蚁与物理定律并不矛盾，但它并不存在。虫洞很有吸引力，但没有证据证明它们确实存在于宇宙中。</p>
+</blockquote>
+<p>一些进入克尔虫洞的轨迹避开了中心奇点，穿过了它。但这里有时间悖论，因为虫洞无法回到过去。</p>
+<blockquote>
+<p>去未来是没有问题的，它不产生任何悖论。相反，回到过去则违反了我们对物理学的所有理解。至少以我们今天的认知不可能理解这种情况。</p>
+<p>这些桥的存在不仅不确定，而且很可能也不稳定，如果是这样，没有什么物质可以穿过它们，只需要一个粒子就能“关上”虫洞。</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/rt9ue2p1jf3/images/blog-images/E/E3/1/1c1d107651b6c27417a854d3b65f724.jpg" alt="图2"></p>
+<h4 id="利用能量？"><a href="#利用能量？" class="headerlink" title="利用能量？"></a>利用能量？</h4><blockquote>
+<p>对史瓦西黑洞而言，这是不可能的。能量在里面，没有什么东西可以逃出来，它对我们周围的观察者来说是只进不出的。但旋转 的黑洞再次发挥了非常特殊的作用。原则上，我们可以提取它们 的旋转能量。</p>
+<p>污染、物种灭绝、环境破坏……这些问题都应该考虑，但还应该考虑在我们创造的“死亡工厂”中，人类和非人类都在遭受着令人难以置信的痛苦。你知道，对动物来说，地狱往往就是地球，这个被我们改造的地球。</p>
+</blockquote>
+<font color=767ac1>
+虽然在科普，但仍然怀有人文思考。
+</font>
+
+<p>抽取能量：向能层发射两个机器人。一个推动另一个，并以负能量进入黑洞，被推动的一个带着比进入时能量之和更大的能量返回。</p>
+<font color=767ac1>
+原来这就是虫洞！和我在上一章所预测的相似！当然，它们都是经过计算的，并且尚在猜测之中。不过，对科幻故事来说已经是足够让人兴奋了。
+</font>
+
+
+
+
+<h2 id="六、黑洞何时蒸发"><a href="#六、黑洞何时蒸发" class="headerlink" title="六、黑洞何时蒸发"></a><font color=767ac1>六、黑洞何时蒸发</font></h2><h4 id="混沌"><a href="#混沌" class="headerlink" title="混沌"></a>混沌</h4><blockquote>
+<p>混乱程度的演变趋势是只增不减的。</p>
+<p>根据最普遍的假设，当一个系统自发演变的时候，这种混乱总是增加的。而且有些混乱没办法重新回到以前，例如一滴牛奶，一旦它在咖啡中扩散开来，就绝无可能重回它最初始的状态。</p>
+<p>因为更混乱的状态更有可能出现。在混乱的情况下，一个宏观的状态可以由许多不同的微观状态构成。当一滴牛奶滴入咖啡中时，势必会导致分子与分子之间相互碰撞。这是一个特殊状态。 而当牛奶扩散时，大量不同位置的分子都会改变这杯咖啡的总状态，让它变得更混乱。这是最有可能发生的。换句话说：有许多不同的方式可以达到混乱的状态，但是让一切变得有序的方式却只有一种。这便是一切都趋向混乱的根本原因，同时，这也是一个基本的自然规律，甚至是最基本的规律。</p>
+</blockquote>
+<p>谈到了用豆浆代替牛奶来避免一些动物剥削产业……</p>
+<blockquote>
+<p>千万不要忘记它们。因为如果连我们都忘了它们，那更不会有人在意它们了，我们的善良也将随之消失。</p>
+</blockquote>
+<font color=767ac1>
+世界上或许必须有所谓的“圣母”，如果每个人都残忍自私，那并不会给世界带来永恒的、无争论的和平，而只会让人类飞速堕落下去。能否从博弈论的角度论证？
+</font>
+
+<p>“熵”</p>
+<blockquote>
+<p>当我们从远处观察一个系统时，它可以用来衡量系统的无序性和缺失的信息。如果一个系统是井然有序的，我们又刚刚好可以观测到它，那我们 就可以获得它的全部信息。反之，如果一个系统处于混乱，便不能获取足够信息：观察牛奶中扩散的分子，我无法获得其他分子的信息。一个系统越混乱，或者说熵越大，我粗略观察所能获得的信息就越少。这就是为什么混乱与缺失的信息如此紧密相连，并且它们可以说是熵的核心观点。</p>
+</blockquote>
+<h4 id="黑洞的熵"><a href="#黑洞的熵" class="headerlink" title="黑洞的熵"></a>黑洞的熵</h4><p>把牛奶咖啡扔进黑洞里：</p>
+<blockquote>
+<p>黑洞的表面积只可能增加。<br>黑洞拥有巨大的熵，但它们似乎不是由围观元素组成的。</p>
+<p>总的来说，根据经典物理学的要求，宇宙的熵在增加。我们由于失去了杯子及其中的液体而失去 了一部分熵，但是我们却由于黑洞质量的增加而得到更多的熵。这个增加量是很明显的，因此总的净增加量还是正的。</p>
+<p>黑洞比起始状态的物质拥有更多的熵。对于一个给定的空间区域，没有什 么可以拥有比黑洞更多的熵！</p>
+</blockquote>
+<font color=767ac1>
+我理解的意思是，一个空间内的物质从初始状态坍缩成黑洞，整个过程是熵增的，黑洞拥有最高的熵。而我们常见的熵增，都是类似于大量微观分子的扩散，无序运动，而黑洞似乎并不是由这种微观结构组成的。
+</font>
+
+<h4 id="黑洞的温度"><a href="#黑洞的温度" class="headerlink" title="黑洞的温度"></a>黑洞的温度</h4><blockquote>
+<p>霍金证明了黑洞的温度可以定义。这也是物理学中最美丽的公式之一，因为它非常简单，但又涉及所有基本常数：光速、普朗克常数、玻尔兹曼常数和牛顿常数。这意味着它广泛涉及了相对论、量子、统计学和引力等各个方面！在这里，所有的物理学都在某种程度上起到了作用。它基本上表明，<strong>黑洞的温度与其质量相反</strong>。</p>
+</blockquote>
+<h4 id="小黑洞的霍金效应"><a href="#小黑洞的霍金效应" class="headerlink" title="小黑洞的霍金效应"></a>小黑洞的霍金效应</h4><blockquote>
+<p>在很多情况下，经典力学就足够了，它是一个很好的近似值。<br>但有时我们必须使用一个更好的理论：量子力学。在石头掉落的问题上，量子力学是不必要的。但是当我们对原子或基本粒子感兴趣时，我们就必须考虑量子力学的定律。对于基本粒子的行为研究，量子力学可能必不可少。量子力学给物理学引入了一 种随机性和离域化的形式。</p>
+</blockquote>
+<p>在小黑洞中量子效应会发挥作用。小质量黑洞很热，会蒸发。（霍金效应）</p>
+<blockquote>
+<p>有人说，黑洞对充满量子波动的真空产生了“潮汐效应”，所以会发射出粒子。用这样的方式来分析，可能不是十分准确，但却使我们能够“感受”到一些现象：根据量子力学的定理，在真空中不断形成的粒子对，可以被黑洞“拉伸”，从而让其中一个粒子逃逸出黑洞。</p>
+<p>我们想象位于黑洞中心奇点层次上的物质，由于量子力学中的“隧道效应”，它可以“跳跃”到黑洞外。<br>大黑洞几乎不会蒸发：视界离中心太远，隧道效应基本不可能发生。</p>
+<p>黑洞并不按我们所知道的世界规律去运行。放射能量时它们变得……更热！这就是为什么说黑洞是真正的炸弹。它们越热就蒸发得越快，而它们蒸发得越多，就越热。这个 过程是相辅相成的。</p>
+</blockquote>
+<h4 id="信息丢失"><a href="#信息丢失" class="headerlink" title="信息丢失"></a>信息丢失</h4><blockquote>
+<p>似乎黑洞发射的都只是纯粹的热辐射，它们没有任何“过往”的痕迹或印记。我以为在物理学中，我们从来不会丢失信息。这是显而易见的：只要我们知道系统的最终状态和相应的物理定律，我们就必然能够找到它过去处于怎样的状态。但是，如果黑洞的辐射与产生它们的东西没有联系，那么信息就会丢失。</p>
+</blockquote>
+<font color=767ac1>
+这是什么意思呢？比如落入黑洞是一个原子，出来的却是3个光子，也不知道是落入的原子去往何处，也不知道出来的光子来自哪里？完全黑箱？
+什么是信息？落入的物质带有什么信息？还需要更多的知识啊。
+</font>
+
+
+
+
+<h2 id="七、我们将会看到黑洞吗？"><a href="#七、我们将会看到黑洞吗？" class="headerlink" title="七、我们将会看到黑洞吗？"></a><font color=767ac1>七、我们将会看到黑洞吗？</font></h2><blockquote>
+<p>让我痛心的是，一些人虽然发现了他们思维上的错误，但却没有改正并深入思考的勇气，对此我深感遗憾。<br>没关系！不要纠结于此。你知道，在浪漫主义时期，没有什么比被别人批判更光荣、更可取的了，即使你真的是无辜的。这就是让美丽变得崇高的东西。我相信即使在今天，那些不认识或不理解我们的人对我们的言论进行批评，都是一个好兆头：只有平庸的想法才不会引起任何波澜。但你必须得保持严谨、谦虚和开放的态度！</p>
+</blockquote>
+<font color=767ac1>
+我们总是下意识相信这样的说法，因为我们本来就很需要对抗批评的勇气。但暂时的相信和发自内心的认可却是根本上的不同，有些东西仍然需要很长时间去领悟。
+</font>
+
+<h4 id="黑洞的存在"><a href="#黑洞的存在" class="headerlink" title="黑洞的存在"></a>黑洞的存在</h4><blockquote>
+<p>两个黑洞互相绕着对方转动，当它们通过引起空间振动而失去能量时，它们的轨道会越来越近，最终会合并。</p>
+</blockquote>
+<p>此过程中产生的引力波可以证明黑洞的存在。</p>
+<font color=767ac1>
+不过后来观测到黑洞，可能在本书成书之后吧，更进一步证实了黑洞的存在。
+</font>
+
+<blockquote>
+<p>干涉测量法：以特定方式组合若干天线的测量结果，使所获得的分辨率取决于天线之间的最长距离，而不是单个天线的大小。</p>
+</blockquote>
+<h4 id="用大型强子对撞机-LHC-创造小黑洞？"><a href="#用大型强子对撞机-LHC-创造小黑洞？" class="headerlink" title="用大型强子对撞机(LHC)创造小黑洞？"></a>用大型强子对撞机(LHC)创造小黑洞？</h4><blockquote>
+<p>粒子加速器的目标是寻找希格斯玻色子以及超对称粒子，就前一种来说，我们成功了，但在后一种上，我们却失败了。</p>
+</blockquote>
+<p>希格斯玻色子：看起来各不相同的力可能是同一种东西。<br>超对称：连接力和粒子。力描述相互作用，粒子描述物理对象。</p>
+<p>LHC目前可确定前者存在，但没有后者的依据。</p>
+<blockquote>
+<p>这也是科学的魅力：我们很少能观察到我们所期望的结果。失望是这个游戏不可或缺的一部分。</p>
+</blockquote>
+<p>粒子撞击产生黑洞，需要远超LHC所能加速的最高能量，来超过普朗克能量。但仍然要考虑这种可能性，因为某些理论中，普朗克能量比LHC产生的可用能量低。这些理论基于额外维度的存在。</p>
+<blockquote>
+<p>一些理论——虽然只是推测但也十分严谨——需要考虑其他维度，这些维度“隐藏”在我们视野之外，因为它们太微弱了。要形成黑洞，不仅要有几个新的维度，而且其大小也要适合。如果只有引力可以“逃”到这些额外的维度，就可以解释为什么引力看起来 如此微弱：它比其他力更弱，是因为它在多个维度上被稀释了。</p>
+</blockquote>
+<p>制造出的小黑洞会有危险吗？</p>
+<p>不会。霍金效应表明它们会迅速蒸发掉。况且每时每刻都有恒星爆炸产生的高能粒子以大于LHC的能量撞击地球大气层，也无事发生。</p>
+<blockquote>
+<p>我们确实没有观察到真正的黑洞蒸发，但是我们看到了被称为“声学黑洞”的蒸发。它们相当于黑洞，但却是流体。在这种情况下，不能传播出来的是声波，而不是黑洞案例中的光波。虽然这两种情况不完全相同，但这些“假”黑洞似乎表明，这种蒸发现象是一个非常好的支持霍金蒸发预测的标志。</p>
+</blockquote>
+<p>它们蒸发的方式将被用来探测额外维度的数量和大小。</p>
+<font color=767ac1>
+多维空间！额外维度！真是令人兴奋啊！
+</font>
+
+
+
+<h2 id="八、黑洞和新物理"><a href="#八、黑洞和新物理" class="headerlink" title="八、黑洞和新物理"></a><font color=767ac1>八、黑洞和新物理</font></h2><h4 id="弦理论"><a href="#弦理论" class="headerlink" title="弦理论"></a>弦理论</h4><blockquote>
+<p>它是统一物体基本相互作用与基本粒子的绝佳尝试，是十分优雅的数学表达，但同时，它成立的条件也十分严苛，只在高维空间下才适用。</p>
+<p>霍金蒸发效应引起的悖论来自这个过程中信息的丢失：在霍金的计算中，非常奇怪的一点是黑洞发出的物质与形成它的东西毫无关系。而这恰恰是弦理论可以提供帮助的地方。目前虽然情况仍 然模糊，存在不确定性，但似乎它最有可能正确地描述黑洞——至少其中的一部分，以避免其信息丢失。</p>
+</blockquote>
+<p>背后是全息原理：</p>
+<blockquote>
+<p>全息图是位于一个平面上的图像，我们可以根据它将空间的信息全部重建。全息原理——当然它在这个阶段仍然是一个理论假设——并没有说宇宙实际上只是一个单纯的平面，相反，它想表达的是空间中包含的 所有信息理论上都可以在平面上进行编码。</p>
+<p>我们可以在平面上编码空间中的一切信息，这实际上只说明了一件事情：所有我们天真地以为可以在三维空间成立的结构，实际上不可能成立。这就是为什么事实上二维平面就已足够了。</p>
+<p>事实上，这个原则要表达的是，我们可以用两种不同的方式去描述这个世界：在二维平面上或者三维空间上。</p>
+<p>科学有时候是开辟出更多的可能性而不是去限制这个现实世界。</p>
+</blockquote>
+<h4 id="圈量子引力理论"><a href="#圈量子引力理论" class="headerlink" title="圈量子引力理论"></a>圈量子引力理论</h4><blockquote>
+<p>圈量子引力理论，它是一种用来调和量子力学和广义相对论这两个看似互不相容的新理论。这是一种谦逊且极简的描述方式：它不是什么革命性的创新理论，而是对已有理论的综合考量。</p>
+<p>当根据它定义的模型被运用到宇宙时，我们发现宇宙大爆炸消失了！取而代之的是宇宙大反弹。宇宙会收缩，反弹，再扩张。我们现在就处于扩张阶段。</p>
+</blockquote>
+<font color=767ac1>
+即宇宙大爆炸的前身是宇宙收缩到一个奇点。
+</font>
+
+<p>黑洞似乎和宇宙一样会反弹，但那意味着有东西会从黑洞视界中逃脱出来？</p>
+<blockquote>
+<p>量子引力将改变这一观点。在这里，视界是“明显可知”的，它不像我们讨论过的事件视界那么极端和严谨。在广义相对论中，爱因斯坦方程有两个解：黑洞和白洞。后者在时间上与前者对称。换句话说：黑洞是什么都出不来，而白洞是什么都进不去，它一直向外“吐”东西。</p>
+<p>在相对论中，黑洞这个内爆的物体，永远不可能变成白洞这样向外爆炸的物体。两个解之间并未相连，两者之间不能互相转换。但一旦进入量子力学，它将变为可能。</p>
+</blockquote>
+<p>观察白洞？</p>
+<p>黑洞反弹为白洞需要时间并不长，但我们是远处的观察者。</p>
+<blockquote>
+<p>从远处测量的反弹时间确实大于宇宙的年龄，这解释了为什么我们看不到白洞而只能看到黑洞。</p>
+</blockquote>
+<p>不过叫做原始黑洞的小黑洞，即使是从远处测量得到的反弹时间，也可能小于宇宙的年龄，并且可能观察到它产生的白洞。</p>
+<blockquote>
+<p>它们的存在仍然是个假设。但在遥远的过去，当宇宙还很年轻的时候，密度非常高，这些小黑洞的形成并非不可能。</p>
+</blockquote>
+<font color=767ac1>
+这种小黑洞应该不是恒星演化的终末期坍缩形成的，质量对不上。意思应该是说在大爆炸密度极高的时候就形成的那种。
+</font>
+
+
+
+
+<h2 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a><font color=767ac1>九、结语</font></h2><blockquote>
+<p>我相信我们这个时代最大的知识暴力正是对所谓“简单”的痴迷，或者有些人称之为“对清晰度的要求”。 </p>
+<p>清晰的确是值得称赞的。<br>当然。没有人会争论这一点。但问题在于，耀眼的清晰性即使不使人盲目，它往往也以简化甚至夸张现实为代价，这些简化或夸张有时简直几近伪造。某些哲学或意识形态潮流强制追求某种清 晰性，在我看来这是对思想可怕的压抑，后果是无法估量的。当然，这也并不意味着寻求模糊与不清晰的行为就一定都是正确的。但我认为，我们不应该害怕微妙性或多样化。我们必须抵制使我们的世界萎缩退化的禁令。认真考虑对真理的追求，即考虑历史并对真理本身的概念提出应有的质疑。就算是真理，它在不同的时代和文化中，也具有许多不同的含义。</p>
+<p>黑洞是美丽的坍缩的星星，但是，对我们来说，我们不应该把不同的存在方式坍缩成理解现实的单一方式。让我们继续反对那些独霸真理解释权的人，捍卫这样一个世界：在这里，科学有时大胆地与诗歌、文学交融；在这里，艺术不会被诋毁；在这里，动荡和脆弱的群体也有发声的权利；在这里，我们对真理的追求有必要且值得称颂，但这追求不会成为一种新的独裁。但忘记真理概念本身，这需要一定的努力才能达成。真理可不仅仅只是物理学的特权。在这里，我们必不可少地要提醒自己，打击欺骗的谎言，但并不否认真理定义的复杂性和含义的多样性。让我们大胆一点。</p>
+<p>我经常与自己发生争执，我怀疑我的每一个意见。我感觉到一种潜在的，有时也是明显的矛盾。这矛盾如此富有感染力，使新生思想如原子般摇摆不定。一切都是脆弱的，而我，甚至比我试图提出的命题更脆弱，即使那些命题还都只是假设。</p>
+</blockquote>
+<font color=767ac1>
+过度痴迷简单，对知识本身来说是种暴力。一分钟了解天体物理学，三分钟看完一部电影，人们渴望知识，却主动或被动地陷入功利心态中。思想的单一，知识的简化，的确省了不少麻烦，但也毫不客气地帮助人类大脑萎缩。又或者，是我们的生活太过复杂和艰难，每个人都在信息的海洋中溺水，渴望一块凝固的浮冰。
+但有时候我们不喜欢这种生活，便提出反对。如果有更多的空间，无论是物理空间还是精神空间，我们仍然愿意用细微而多样，不可清楚言说的美妙故事来装饰，来填满。为此，我们也在不断争取更多的空间。
+</font>
+
+
+
+<font color=767ac1>
+完结
+</font>
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/25/06-4-%E8%BF%B7%E8%8C%AB%E6%97%B6%E7%9A%84%E9%97%AE%E7%AD%94/" rel="prev" title="工具：迷茫时的问答">
+      <i class="fa fa-chevron-left"></i> 工具：迷茫时的问答
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/12/30/TS97-2-1-%E5%B7%A5%E5%85%B7-%E9%A3%9F%E8%B0%B1/" rel="next" title="食谱">
+      食谱 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">序言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%AF%B9%E8%AF%9D%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">关于对话形式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%BB%91%E6%B4%9E%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.2.</span> <span class="nav-text">一、黑洞到底是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E7%9C%9F%E7%9A%84%E7%9C%8B%E5%88%B0%E9%BB%91%E6%B4%9E%E4%BA%86%E5%90%97%EF%BC%9F"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">我们真的看到黑洞了吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%91%E6%B4%9E%E7%9A%84%E8%A1%A8%E9%9D%A2"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">黑洞的表面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E7%9A%84%E7%90%86%E8%AE%BA"><span class="nav-number">1.3.</span> <span class="nav-text">二、爱因斯坦的理论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E7%9A%84%E7%90%86%E8%AE%BA%E4%B8%8E%E5%BC%95%E5%8A%9B%E6%B3%A2"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">爱因斯坦的理论与引力波</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%87%E5%AE%99%E7%9A%84%E8%BE%B9%E7%95%8C"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">宇宙的边界</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%97%B6%E7%A9%BA%E4%BD%95%E6%97%B6%E5%8F%98%E7%96%AF%E7%8B%82"><span class="nav-number">1.4.</span> <span class="nav-text">三、时空何时变疯狂</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E6%88%90%E5%83%8F"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">多重成像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%89%E9%80%9F%E5%8F%98%E5%8C%96"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">光速变化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E9%BB%91%E6%B4%9E%E4%B8%AD%E7%9A%84%E6%97%85%E8%A1%8C"><span class="nav-number">1.5.</span> <span class="nav-text">四、黑洞中的旅行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BD%AE%E6%B1%90%E6%95%88%E5%BA%94%EF%BC%9A%E8%B7%B3%E5%85%A5%E9%BB%91%E6%B4%9E%E4%BC%9A%E6%80%8E%E6%A0%B7%EF%BC%9F"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">潮汐效应：跳入黑洞会怎样？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%94%E5%85%89%E9%80%9F%E5%BF%AB%EF%BC%9F"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">比光速快？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A5%87%E7%82%B9"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">奇点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E8%A3%B9%E6%95%88%E5%BA%94%EF%BC%9F"><span class="nav-number">1.5.0.4.</span> <span class="nav-text">包裹效应？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%91%E6%B4%9E%E7%9A%84%E4%BD%93%E7%A7%AF"><span class="nav-number">1.5.0.5.</span> <span class="nav-text">黑洞的体积</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E9%BB%91%E6%B4%9E%E7%9A%84%E6%97%8B%E8%BD%AC"><span class="nav-number">1.6.</span> <span class="nav-text">五、黑洞的旋转</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E7%9A%84%E9%BB%91%E6%B4%9E"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">旋转的黑洞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E7%95%8C%E5%92%8C%E8%83%BD%E5%B1%82"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">静界和能层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%A0%E8%90%BD%E7%9A%84%E7%9F%B3%E5%A4%B4%EF%BC%8C%E5%A5%87%E7%82%B9%E5%92%8C%E8%99%AB%E6%B4%9E"><span class="nav-number">1.6.0.3.</span> <span class="nav-text">坠落的石头，奇点和虫洞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E8%83%BD%E9%87%8F%EF%BC%9F"><span class="nav-number">1.6.0.4.</span> <span class="nav-text">利用能量？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E9%BB%91%E6%B4%9E%E4%BD%95%E6%97%B6%E8%92%B8%E5%8F%91"><span class="nav-number">1.7.</span> <span class="nav-text">六、黑洞何时蒸发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%B7%E6%B2%8C"><span class="nav-number">1.7.0.1.</span> <span class="nav-text">混沌</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%91%E6%B4%9E%E7%9A%84%E7%86%B5"><span class="nav-number">1.7.0.2.</span> <span class="nav-text">黑洞的熵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%91%E6%B4%9E%E7%9A%84%E6%B8%A9%E5%BA%A6"><span class="nav-number">1.7.0.3.</span> <span class="nav-text">黑洞的温度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E9%BB%91%E6%B4%9E%E7%9A%84%E9%9C%8D%E9%87%91%E6%95%88%E5%BA%94"><span class="nav-number">1.7.0.4.</span> <span class="nav-text">小黑洞的霍金效应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E4%B8%A2%E5%A4%B1"><span class="nav-number">1.7.0.5.</span> <span class="nav-text">信息丢失</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E6%88%91%E4%BB%AC%E5%B0%86%E4%BC%9A%E7%9C%8B%E5%88%B0%E9%BB%91%E6%B4%9E%E5%90%97%EF%BC%9F"><span class="nav-number">1.8.</span> <span class="nav-text">七、我们将会看到黑洞吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%91%E6%B4%9E%E7%9A%84%E5%AD%98%E5%9C%A8"><span class="nav-number">1.8.0.1.</span> <span class="nav-text">黑洞的存在</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E5%A4%A7%E5%9E%8B%E5%BC%BA%E5%AD%90%E5%AF%B9%E6%92%9E%E6%9C%BA-LHC-%E5%88%9B%E9%80%A0%E5%B0%8F%E9%BB%91%E6%B4%9E%EF%BC%9F"><span class="nav-number">1.8.0.2.</span> <span class="nav-text">用大型强子对撞机(LHC)创造小黑洞？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E9%BB%91%E6%B4%9E%E5%92%8C%E6%96%B0%E7%89%A9%E7%90%86"><span class="nav-number">1.9.</span> <span class="nav-text">八、黑洞和新物理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%A6%E7%90%86%E8%AE%BA"><span class="nav-number">1.9.0.1.</span> <span class="nav-text">弦理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%88%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E7%90%86%E8%AE%BA"><span class="nav-number">1.9.0.2.</span> <span class="nav-text">圈量子引力理论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E7%BB%93%E8%AF%AD"><span class="nav-number">1.10.</span> <span class="nav-text">九、结语</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+    </div>
+</body>
+</html>
